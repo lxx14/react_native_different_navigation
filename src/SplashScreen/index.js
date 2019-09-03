@@ -12,7 +12,7 @@ class SplashScreen extends Component {
     }
 
     goMainPage = () => {
-        const { navigate } = this.props.navigation;
+        const { navigation: { navigate } } = this.props;
         navigate('MainApp');
     }
     render() {

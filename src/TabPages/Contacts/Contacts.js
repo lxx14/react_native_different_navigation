@@ -8,14 +8,22 @@ import { styles } from './styles';
 export class Contacts extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            users: []
+        }
+    }
+    componentDidMount() {
+        const { users: usersFromProps } = this.props;
+        const users = getUser(usersFromProps, 'contacts', this.props);
+        this.setState({ users });
     }
 
     render() {
-        const { users } = this.props;
+        const { users } = this.state;
 
         return (
             <View style={styles.container}>
-                {getUser(users, 'contacts', this.props)}
+                {users}
             </View>
         )
     }

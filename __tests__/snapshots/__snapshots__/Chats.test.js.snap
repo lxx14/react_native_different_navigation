@@ -15,13 +15,13 @@ exports[`Chats create snapshot Chats 1`] = `
           "id": 1,
           "messages": Array [
             Object {
-              "date": "11 days ago",
+              "date": "14 days ago",
               "id": 11,
               "recieved": false,
               "text": "hello",
             },
             Object {
-              "date": "9 days ago",
+              "date": "12 days ago",
               "id": 12,
               "recieved": true,
               "text": "hi bro",
@@ -34,13 +34,13 @@ exports[`Chats create snapshot Chats 1`] = `
           "id": 2,
           "messages": Array [
             Object {
-              "date": "10 days ago",
+              "date": "13 days ago",
               "id": 21,
               "recieved": false,
               "text": "Have a nice day!",
             },
             Object {
-              "date": "7 days ago",
+              "date": "10 days ago",
               "id": 22,
               "recieved": true,
               "text": "thanks",
@@ -53,13 +53,13 @@ exports[`Chats create snapshot Chats 1`] = `
           "id": 3,
           "messages": Array [
             Object {
-              "date": "5 days ago",
+              "date": "8 days ago",
               "id": 31,
               "recieved": false,
               "text": "YO!",
             },
             Object {
-              "date": "4 days ago",
+              "date": "7 days ago",
               "id": 32,
               "recieved": true,
               "text": "HI!",
