@@ -9,8 +9,10 @@ import {
     Invert,
     RadialGradient
 } from 'react-native-image-filter-kit';
+import AsyncStorage from '@react-native-community/async-storage';
 
-import {styles} from './styles';
+import { styles } from './styles';
+
 
 export default class OpenGL extends Component {
 
@@ -21,13 +23,31 @@ export default class OpenGL extends Component {
         }
     }
 
-    changeColor1 = (value) => {
+    componentDidMount = async () => {
+        try {
+            const blur = await AsyncStorage.getItem("range")
+            if (blur) {
+                this.setState({ blur: JSON.parse(blur) });
+            }
+        } catch {
+
+        }
+    }
+
+    componentDidUpdate = async () => {
+        const { blur } = this.state;
+        await AsyncStorage.setItem("range", `${blur}`);
+    }
+
+    changeBlur = (value) => {
         this.setState({
             blur: +value
         })
     }
 
     render() {
+        const { blur } = this.state;
+
         return (
             <View style={styles.container}>
                 <BoxBlur
@@ -37,12 +57,12 @@ export default class OpenGL extends Component {
                             style={styles.image}
                         />
                     }
-                    radius={this.state.blur}
+                    radius={blur}
                 />
                 <MultiSlider
-                    value={0}
+                    values={[blur]}
                     sliderLength={280}
-                    onValuesChange={this.changeColor1}
+                    onValuesChange={this.changeBlur}
                     min={0}
                     max={10}
                     step={1}
