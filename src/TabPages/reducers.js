@@ -8,11 +8,6 @@ const initialState = {
 export default function (state = initialState, action) {
     const { type, data } = action;
     switch (type) {
-        case CHANGE_TITLE:
-            return {
-                ...state,
-                name: data
-            };
         case CHANGE_ICON:
             return {
                 ...state,

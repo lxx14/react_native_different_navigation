@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Text, View, Image, TouchableWithoutFeedback } from 'react-native';
 import { connect } from 'react-redux';
 
-import { changeTitleActionType, changeIconActionType } from '../../actions';
+import { changeIconActionType } from '../../actions';
 import { styles } from './styles';
 
 class User extends Component {
@@ -11,8 +11,7 @@ class User extends Component {
     }
 
     goToChat = () => {
-        const { user: { id, messages, name }, date, navigation, changeTitleActionType, changeIconActionType } = this.props;
-        changeTitleActionType(name);
+        const { user: { id, messages }, navigation, changeIconActionType } = this.props;
         changeIconActionType(true);
         navigation.navigate("Dialog",
             {
@@ -48,7 +47,6 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = {
-    changeTitleActionType,
     changeIconActionType
 }
 
