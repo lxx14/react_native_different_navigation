@@ -32,10 +32,18 @@ const TitleComponent = (props) => {
     }
 
     const changeRouteName = () => {
-        return index === 0 ?
-            <Text style={styles.title}>Contacts</Text> :
-            index === 1 ? <Text style={styles.title}>Chats</Text> :
-                <Text style={styles.title}>Open GL</Text>
+        switch (index) {
+            case 0: {
+                return <Text style={styles.title}>Contacts</Text>
+            }
+            case 1 : {
+                return <Text style={styles.title}>Chats</Text>
+            }
+            case 2: {
+                return <Text style={styles.title}>Open GL</Text>
+            }
+            default: return null
+        }
     }
 
     return (

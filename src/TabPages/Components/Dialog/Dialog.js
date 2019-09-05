@@ -37,11 +37,12 @@ class Dialog extends Component {
     render() {
         const { navigation: { state: { params: { messages } } } } = this.props;
         const { text } = this.state;
+        const renderMessages = getMessages(messages, styles);
 
         return (
             <View style={styles.mainContainer}>
                 <ScrollView style={styles.textContainer}>
-                    {getMessages(messages, styles)}
+                    {renderMessages}
                 </ScrollView>
                 <View>
                     <TextInput value={text} onChangeText={this.handleText} style={styles.input} placeholder='message' />
